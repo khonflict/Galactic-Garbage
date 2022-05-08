@@ -8,8 +8,8 @@ document.getElementById('startbutton').addEventListener('click', function() {
     const ctx = game.getContext('2d');
     const keys = {};
     const ship = {
-        x: 240,
-        y: 500, 
+        x: 650,
+        y: 800, 
         width: 30,
         height: 40,
         // Sprite animation frames
@@ -135,10 +135,14 @@ document.getElementById('startbutton').addEventListener('click', function() {
     astroid.y += spawnRateOfDescent;
         ctx.beginPath();
         ctx.arc(astroid.x, astroid.y, 12, 0, Math.PI * 2);
+    
+        const trashBall = new Image();
+        trashBall.src = 'trashBall.png'
+        ctx.drawImage(trashBall, 0, 0)
 
-        // const rocketShip = new Image();
-        // rocketShip.src = 'tractorImgSmoke.png';
-        // ctx.drawImage(rocketShip, 200, 200, 100, 100);
+        const rocketShip = new Image();
+        rocketShip.src = 'tractorImgSmoke.png';
+        ctx.drawImage(rocketShip, 200, 200, 100, 100);
         
         // const testastroid = new Image()
         // testastroid.src = 'trashBall.png'
@@ -205,7 +209,6 @@ document.getElementById('startbutton').addEventListener('click', function() {
        
     }
 });
-
 
 
 
