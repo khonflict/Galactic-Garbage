@@ -18,7 +18,6 @@ Game page:
 
 ![my_Image](GGwireframe2.jpeg)
 
-
 # Unsolved Problems
 **Images**
 
@@ -34,4 +33,10 @@ The image for garbage:
 
 **Additional Levels**
 
-The inital plan was to create 5 levels with increasing difficulty and different types of garbage. Since I was only able to develop one level I increased the numbers of bebris to make it more challenging. 
+The inital plan was to create 5 levels with increasing difficulty using new types of garbage. Since I was only able to develop one level I increased the numbers of bebris to make it more challenging. 
+
+**Music**
+
+Audio helps bring a game to life. Add game music to every level. 
+
+
