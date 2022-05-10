@@ -37,6 +37,6 @@ The inital plan was to create 5 levels with increasing difficulty using new type
 
 **Music**
 
-Audio helps bring a game to life. Add game music to every level. 
+Audio helps bring a game to life! Add game music to every level. 
 
 
