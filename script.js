@@ -12,17 +12,15 @@ document.getElementById('startbutton').addEventListener('click', function() {
         y: 800, 
         width: 30,
         height: 40,
-        // Sprite animation frames
         frameX: 2,
         frameY: 1,
     };
-    // ship = new Image()
-    // ship.src = 'tractorImgSmoke.png'
-    // Grabbing sprite img
+   
+    // Ship imgage 
     const rocketShip = new Image();
     rocketShip.src = 'tractorImgSmoke.png';
 
-    // Drawing sprite image
+    // Draw ship image on canvas
     function drawShip(img, sX, sY, sW, sH, dX, dY, dW, dH) {
         ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
     }
@@ -32,7 +30,7 @@ document.getElementById('startbutton').addEventListener('click', function() {
         if (ship.frameY < 1) ship.frameY++
         else ship.frameY = 0;
     }
-    // linking key movements to game movements
+    // linking keys to game movements
     document.addEventListener('keydown', function(evt) {
         if (evt.key === 'w') {
         keys['w'] = true;
@@ -59,7 +57,7 @@ document.getElementById('startbutton').addEventListener('click', function() {
         }
     });
 
-    // Movement of ship 
+    // Ship Movement 
     function shipMovement () {
         if (keys.w) {
         if (ship.y - 5 > 0){
@@ -136,27 +134,24 @@ document.getElementById('startbutton').addEventListener('click', function() {
         ctx.beginPath();
         ctx.arc(astroid.x, astroid.y, 12, 0, Math.PI * 2);
     
-        const trashBall = new Image();
-        trashBall.src = 'trashBall.png'
-        ctx.drawImage(trashBall, 0, 0)
+    // Tried agian to assign images to ship and asteroid variables but didn't work
+        // const trashBall = new Image();
+        // trashBall.src = 'trashBall.png'
+        // ctx.drawImage(trashBall, 0, 0)
 
-        const rocketShip = new Image();
-        rocketShip.src = 'tractorImgSmoke.png';
-        ctx.drawImage(rocketShip, 200, 200, 100, 100);
+        // const rocketShip = new Image();
+        // rocketShip.src = 'tractorImgSmoke.png';
+        // ctx.drawImage(rocketShip, 200, 200, 100, 100);
         
-        // const testastroid = new Image()
-        // testastroid.src = 'trashBall.png'
-        // const pattern = ctx.createPattern (testastroid, 'repeat')
-
         ctx.closePath();
         ctx.fillStyle = astroid.type;
         ctx.fill();
         }
     // Itterating through astroids array for collision detection
     for (let i = 0; i < astroids.length; i++) {
-        collisionDetection(astroids[i], ship)
+    collisionDetection(astroids[i], ship)
         }
-    // Rendering sprite onto the canvas
+    // Rendering ship onto the canvas
     drawShip(rocketShip, ship.width * ship.frameX, ship.height * ship.frameY, ship.width, ship.height, ship.x, ship.y, ship.width, ship.height);
 
     // ship movement / animation functions
@@ -164,11 +159,11 @@ document.getElementById('startbutton').addEventListener('click', function() {
     shipMovement();
     }
 
-    // Collision detection math for ships and astriods
+    // Collision detection 
     function collisionDetection(astroid, ship) {
     let distX = Math.abs(astroid.x - ship.x - ship.width / 2);  
     let distY = Math.abs(astroid.y - ship.y - ship.height / 2);
-
+   
     if (distX <= (ship.width / 1.1) && distY <= (ship.height / 2)) {
     
     // Game over conditions
@@ -182,14 +177,13 @@ document.getElementById('startbutton').addEventListener('click', function() {
     cancelAnimationFrame(stop)
 
     document.getElementById('scoretext').innerText = 'Score';
-        }
-        
-    // More collision detection math
-    let dx = distX - ship.width / 2;
-    let dy = distY - ship.height / 2;
-    return (dx * dx + dy * dy <= (astroid.r * astroid.r));
     }
-
+        
+    let dx = distX - ship.width / 2;
+    let dy = distY - ship.height / 2;        
+    return (dx * dx + dy * dy <= (astroid.r * astroid.r));   
+    }
+ 
     // Restart button
     function gameRestart() {
     location.reload();
@@ -205,12 +199,7 @@ document.getElementById('startbutton').addEventListener('click', function() {
     // Displaying score
     document.getElementById('score').innerText = seconds;
     const finalScore = document.getElementById('score');
-
-       
+     
     }
 });
-
-
-
-
 
